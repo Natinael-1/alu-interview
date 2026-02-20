@@ -5,15 +5,7 @@ Module for calculating rainwater retention.
 
 
 def rain(walls):
-    """
-    Calculate how many square units of water will be retained after it rains.
 
-    Args:
-        walls (list): A list of non-negative integers representing wall heights.
-
-    Returns:
-        int: Total amount of rainwater retained.
-    """
     if not walls or len(walls) < 3:
         return 0
 
@@ -25,7 +17,7 @@ def rain(walls):
 
     while left < right:
         if walls[left] < walls[right]:
-            # If current left wall is higher than previous max, update it
+           
             if walls[left] >= left_max:
                 left_max = walls[left]
             else:
@@ -33,11 +25,11 @@ def rain(walls):
                 water += left_max - walls[left]
             left += 1
         else:
-            # If current right wall is higher than previous max, update it
+           
             if walls[right] >= right_max:
                 right_max = walls[right]
             else:
-                # Water trapped = Max height seen - current height
+                
                 water += right_max - walls[right]
             right -= 1
 
