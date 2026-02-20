@@ -1,7 +1,13 @@
 #!/usr/bin/python3
+"""
+Module for calculating rainwater retention.
+"""
+
+
 def rain(walls):
     if not walls or len(walls) < 3:
         return 0
+
     water = 0
     left = 0
     right = len(walls) - 1
@@ -21,4 +27,5 @@ def rain(walls):
             else:
                 water += right_max - walls[right]
             right -= 1
+
     return water
